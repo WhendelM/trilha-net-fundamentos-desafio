@@ -9,7 +9,8 @@ namespace DesafioFundamentos.Models
     {
         private decimal precoInicial = 0;
         private decimal precoPorHora = 0;
-        private List<string> veiculos = new List<string>();
+        public static List<string> veiculos = new List<string>();
+         public const int LimiteMaximo = 3; 
 
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
         {
@@ -19,7 +20,15 @@ namespace DesafioFundamentos.Models
 
         public void AdicionarVeiculo()
         {
+            if(veiculos.Count == LimiteMaximo){
+                Console.WriteLine("O estacionamento está lotado. Por gentileza, procure outro estabelecimento ou espere por uma vaga. ");
+            }
+            else{
             //Função AdicionarVeiculo implementada!
+            Console.WriteLine("Informe o preço inicial de pagamento: ");
+            precoInicial = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Informe digite o preço por hora:");
+            precoPorHora = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("Digite a placa do veículo para estacionar:");
             string placa = Console.ReadLine();
             placa = placa.ToUpper(); //Coloca todas as letras em maiúsculo
@@ -32,8 +41,8 @@ namespace DesafioFundamentos.Models
             {
                 Console.WriteLine("A placa solicitada não está correta. Verifique-a e tente novamente.");
             }
+            }
         }
-
         public static bool VerificarPadraoPlaca(string placa)
         {
             string ModeloPlaca = @"^[A-Z]{3}\d[A-Z]\d{2}$"; //Modelo de placa (LETRA LETRA LETRA NÚMERO LETRA NÚMERO NÚMERO)
@@ -42,7 +51,8 @@ namespace DesafioFundamentos.Models
         }
 
         public void RemoverVeiculo()
-        {
+        {   
+
             Console.WriteLine("Digite a placa do veículo para remover:");
 
             //Função RemoverVeiculo implementada!
@@ -80,5 +90,7 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine("Não há veículos estacionados.");
             }
         }
+    }
+}
     }
 }
