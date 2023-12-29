@@ -5,13 +5,10 @@ www.dio.me
 Criar um sistema de estacionamento a partir dos conhecimentos sobre Programação Orientada a Obejtos (POO).
 
 ## Proposta
-Construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
-
-![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
 
 ## Metodologia 
 
-1. A classe **Estacionamento**
+1. A classe **Estacionamento** abriga 4 variáveis:
 
 **precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
 
@@ -19,9 +16,12 @@ Construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
 
 **veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
 
-A classe contém três métodos, sendo:
+**LimiteMaximo (Incremento)**: A quantidade máxima de veículos que o estacionamento pode comportar. 
+Com o passar dos cadastros, o sistema mostrará a quantidade de vagas disponíveis e caso o estacionamento esteja sem vagas, a opção de Adicionar Veículos estará indisponível.
 
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
+A classe contém quatro métodos, sendo:
+
+**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos** caso haja vagas disponíveis. 
 
 **RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
 
@@ -33,6 +33,4 @@ Por último, deverá ser feito um menu interativo com as seguintes ações imple
 3. Listar veículos
 4. Encerrar
 
-
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+2. No **Programa** será mostrada uma mensagem indicando a quantidade de vagas disponíveis e o menu interativo.
