@@ -6,6 +6,7 @@ Criar um sistema de estacionamento a partir dos conhecimentos sobre Programaçã
 
 ## Proposta
 Construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
+
 ![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
 
 ## Metodologia 
