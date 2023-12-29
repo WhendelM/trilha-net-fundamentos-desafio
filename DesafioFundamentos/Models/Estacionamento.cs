@@ -10,6 +10,7 @@ namespace DesafioFundamentos.Models
         private decimal precoInicial = 0;
         private decimal precoPorHora = 0;
         public static List<string> veiculos = new List<string>();
+        
          public const int LimiteMaximo = 3; 
 
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
@@ -32,22 +33,9 @@ namespace DesafioFundamentos.Models
             Console.WriteLine("Digite a placa do veículo para estacionar:");
             string placa = Console.ReadLine();
             placa = placa.ToUpper(); //Coloca todas as letras em maiúsculo
-            if (VerificarPadraoPlaca(placa))
-            {
-                veiculos.Add(placa);
-                Console.WriteLine("O seu carro foi estacionado!");
+            veiculos.Add(placa);
+            Console.WriteLine("O seu carro foi estacionado!");
             }
-            else
-            {
-                Console.WriteLine("A placa solicitada não está correta. Verifique-a e tente novamente.");
-            }
-            }
-        }
-        public static bool VerificarPadraoPlaca(string placa)
-        {
-            string ModeloPlaca = @"^[A-Z]{3}\d[A-Z]\d{2}$"; //Modelo de placa (LETRA LETRA LETRA NÚMERO LETRA NÚMERO NÚMERO)
-            Regex padraoPlaca = new Regex(ModeloPlaca); //Configurar o modelo como padrão para verificação
-            return padraoPlaca.IsMatch(placa); //Retorna a compatibilidade da placa com o modelo
         }
 
         public void RemoverVeiculo()
@@ -73,7 +61,6 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
             }
         }
-
         public void ListarVeiculos()
         {
             //Função ListarVeiculos implementada!
@@ -90,7 +77,5 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine("Não há veículos estacionados.");
             }
         }
-    }
-}
     }
 }
