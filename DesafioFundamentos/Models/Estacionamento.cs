@@ -41,7 +41,7 @@ namespace DesafioFundamentos.Models
                 else{
                     //Função de Estacionar implementada.
                     Console.WriteLine($"Seja bem vindo ao sistema de estacionamento!\n Atualmente, há {Estacionamento.LimiteMaximo - Estacionamento.veiculosRot.Count} vagas disponíveis. ");
-                    Console.WriteLine("Atualmente, a tarifa é de R$ 10,00 e o preço adicional por hora é de R$ 3,00.");
+                    Console.WriteLine("A tarifa é de R$ 10,00 e o preço adicional por hora é de R$ 3,00.");
                     Console.WriteLine("Digite o seu nome e sobrenome para continuar: ");
                     //Armazenamento de Nome e CPF para visualização do Administrador do sistema.
                     NomesRotAdm.Add(Console.ReadLine());
@@ -67,7 +67,7 @@ namespace DesafioFundamentos.Models
                 else{
                     //Função de Estacionar implementada.
                     Console.WriteLine($"Seja bem vindo ao sistema de estacionamento!\n Atualmente, há {Estacionamento.LimiteMaximo - Estacionamento.veiculosMes.Count} vagas disponíveis. ");
-                    Console.WriteLine("Atualmente, a tarifa é de R$ 250,00 e o preço adicional por hora é de R$ 50,00.");
+                    Console.WriteLine("A tarifa é de R$ 250,00 e o preço adicional por mês é de R$ 50,00.");
                     Console.WriteLine("Digite seu nome e sobrenome para verificação: ");
                     string verificacao = Console.ReadLine();
                     //Verificar se o usuário já está cadastrado no sistema de estacionamento mensalista.
@@ -114,9 +114,6 @@ namespace DesafioFundamentos.Models
             tecla = tecla.ToUpper();
             if(tecla == "M"){
                 AdicionarVeiculo(tecla);
-            }
-            else{
-                Environment.Exit(0);
             }
         }
 
