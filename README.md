@@ -5,7 +5,7 @@ www.dio.me
 Criar um sistema de estacionamento a partir dos conhecimentos sobre Programação Orientada a Obejtos (POO).
 
 ## Proposta
-
+<img src="Mapa Conceitual II - Whendel Muniz dos Santos - Página 2.png">
 ## Metodologia 
 
 1. A classe **Estacionamento** abriga 4 variáveis:
