@@ -12,7 +12,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 **1. Área do Cliente:** Área aberta para todos os clientes que venham a se interessar no estacionamento. Neste projeto, há dois modelos:
 
    **1.1 Estacionamento Rotativo:** Modelo baseado em estacionar veículos durante até 1 dia e o valor é pago na saída (retirada do veículo após o tempo de estacionamento).
-         Neste método, apesar de nao haver cadastro obrigatório, são solicitados o nome e o CPF do usuário que estacionar o veículo. 
+         Neste método, apesar de não haver cadastro obrigatório, são solicitados o nome e o CPF do usuário que estacionar o veículo. 
          
    **1.1.1 Opções no Modo Rotativo:**
            
