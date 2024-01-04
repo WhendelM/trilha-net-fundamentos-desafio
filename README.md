@@ -17,7 +17,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
    **1.1.1 Opções no Modo Rotativo:**
            
 -   **Estacionar Veículos**
-  - **Remover Veículo**
+  - **Remover Veículos**
 
          
 **1.2 Estacionamento Mensalista:** Modelo baseado em estacionar veículos durante, pelo menos, 1 mês com valor pago na entrada (é feito um cadastro e um plano de estacionamento previamente com pagamento imediato).
@@ -27,14 +27,14 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 **1.2.1 Opções no Modo Mensalista:**
   -  **Cadastrar Clientes**
   -  **Estacionar Veículos**
--  **Remover Veículo**     
+-  **Remover Veículos**     
   
 **2. Área do Administrador**: Área fechada e com entrada liberada apenas para funcionários ou colaboradores que possuam uma senha específica disponibilizada pela empresa. É uma área privativa com informações confindenciais e utilizada como banco de dados para a segurança dos usuários e da empresa, além de auxiliar na elaboração de relatórios financeiros.       
 
 **2.1 Opções da Área do Administrador**
-    - **Listar Veículos**
-    - **Listar Clientes**
-  - - **Acessar Rendimento Financeiro**   
+    -  **Listar Veículos**
+  -  **Listar Clientes**
+-  **Acesssr Rendimento Financeiro**    
 
 ## Diagrama de Funcionamento do Sistema
 <img src="Diagrama .png">
