@@ -36,6 +36,8 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
     
 ## Metodologia de Código 
 
+**1. Varíavies**: 
+
 ## Diagrama de Funcionamento 
 
 
