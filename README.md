@@ -244,7 +244,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }
         }
 
-  - **2.4 Listar Veículos**: Função utilizada apenas por administradores e responsável poe listar todos os veículos de ambas as áreas.
+- **2.4 Listar Veículos**: Função utilizada apenas por administradores e responsável poe listar todos os veículos de ambas as áreas.
 
              public void ListarVeiculos(){
             //Listar todos os veículos rotativos que foram estacionados (incluindo os que já foram removidos).
