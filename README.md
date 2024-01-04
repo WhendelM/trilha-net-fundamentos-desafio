@@ -46,7 +46,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         private const decimal PrecoAdicionalRot = 3;
         public static List<string> veiculosRot = new List<string>();
 
-- **1.1 Modo Mensalista**
+- **1.2 Modo Mensalista**
 
         
         //Objetos para o modo ROTATIVO de estacionamento (rot).
@@ -56,7 +56,19 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         public static List<string> veiculosRot = new List<string>();
 
 
+- **1.3 Administrador**
 
+        //Objetos para o controle do Administrador.
+        //Em ordem: Listas com os veículos diários,com os nomes, os cpfs, o rendimento de cada parte do estacionamento (Rotativo e Mensalista) e o limite máximo dos veículos das duas partes. 
+        private static List<string> veiculosRotAdm = new List<string>();
+        private static List<string> NomesRotAdm = new List<string>();
+        private static List<string> CpfRotAdm = new List<string>();
+        private static List<decimal> RendimentoRot = new List<decimal>();
+        private static List<string> veiculosMesAdm = new List<string>();
+        private static List<string> NomesMesAdm = new List<string>();
+        private static List<string> CpfMesAdm = new List<string>();
+        private static List<decimal> RendimentoMes = new List<decimal>();
+        private const int LimiteMaximo = 3; 
 
 ## Diagrama de Funcionamento 
 <img src="Mapa Conceitual II - Whendel Muniz dos Santos - Página 2.png">
