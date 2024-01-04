@@ -15,25 +15,25 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
          Neste método, apesar de nao haver cadastro obrigatório, são solicitados o nome e o CPF do usuário que estacionar o veículo. 
          
    **1.1.1 Opções no Modo Rotativo:**
-             - Estacionar Veículos
-             -- Remover Veículos
+             Estacionar Veículos
+             Remover Veículos
              
   **1.2 Estacionamento Mensalista:** Modelo baseado em estacionar veículos durante, pelo menos, 1 mês com valor pago na entrada (é feito um cadastro e um plano de estacionamento previamente com pagamento imediato).
         Neste método, para acessar o Modo Mnesalista, é necessário, obrigatoriamente, estar cadastrado previamente no sistema, sendo solicitados o nome e o CPF do usuário que 
         estacionar o veículo.  
         
 **1.2.1 Opções no Modo Mensalista:**
-             - Cadastrar Cliente
-             - Estacionar Veículos
-             - Remover Veículos
+             Cadastrar Cliente
+             Estacionar Veículos
+             Remover Veículos
 
   
 **2. Área do Administrador**: Área fechada e com entrada liberada apenas para funcionários ou colaboradores que possuam uma senha específica disponibilizada pela empresa. É uma área privativa com informações confindenciais e utilizada como banco de dados para a segurança dos usuários e da empresa, além de auxiliar na elaboração de relatórios financeiros.       
 
 **2.1 Opções da Área do Administrador**
-               - Listar Veículos
-               - Listar Clientes
-                 Acessar Rendimento Financeiro
+               Listar Veículos
+               Listar Clientes
+                Acessar Rendimento Financeiro
 
 ## Metodologia de Código 
 
@@ -46,17 +46,21 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         private const decimal PrecoAdicionalRot = 3;
         public static List<string> veiculosRot = new List<string>();
 
+- **1.1 Modo Mensalista**
+-
+        
+        //Objetos para o modo ROTATIVO de estacionamento (rot).
+        //Em ordem: Preço Inicial Fixo, Preço por Hora e Lista com os Veículos (Placas).
+        private const decimal PrecoInicialRot = 10;
+        private const decimal PrecoAdicionalRot = 3;
+        public static List<string> veiculosRot = new List<string>();
+
+
 
 
 ## Diagrama de Funcionamento 
-
-
-  
-      
-      
-4. 
-5. 
 <img src="Mapa Conceitual II - Whendel Muniz dos Santos - Página 2.png">
+
 ## Metodologia 
 
 1. A classe **Estacionamento** abriga 4 variáveis:
