@@ -351,8 +351,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             //Rendimento Total
             Console.WriteLine($"O rendimento total foi de: R${RendimentoRot.Sum() + RendimentoMes.Sum()}.");
         }
-    }
-    }
+       } }
 
 ## Metodologia de Código do Funcionamento do Sistema
 
