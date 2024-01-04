@@ -193,7 +193,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }
         }
 
--- **2.3 Remover Veículos**: Função responsável por remover os veículos de cada área do estacionamento. Nessa função, o pagamento do cliente rotativo é efetuado.
+- **2.3 Remover Veículos**: Função responsável por remover os veículos de cada área do estacionamento. Nessa função, o pagamento do cliente rotativo é efetuado.
 
             //Função de Remover Veículos
             public void RemoverVeiculo(string letra){ 
