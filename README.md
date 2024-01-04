@@ -344,7 +344,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
     }
     }
 ## Diagrama de Funcionamento 
-<img src="Diagrama - Whendel Muniz dos Santos .png">
+<img src="Diagrama - Whendel Muniz dos Santos.png">
 
 ## Metodologia 
 
