@@ -484,7 +484,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 #### **Modo Rotativo**
 
 - **Modo Rotativo - Estacionar Veículo**
-  
+  <img src="Estacionar-Rotativo.png">
 
 - **Modo Rotativo - Remover Veículo**
 
