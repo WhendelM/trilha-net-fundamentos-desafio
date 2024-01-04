@@ -475,9 +475,9 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
     //Finalizar o Programa e Reiniciá-lo.
     }
 
-##Apresentação do Funcionamento do Sistema 
+## Apresentação do Funcionamento do Sistema 
 
-## **Painel Inicial**
+### **Painel Inicial**
 
 #**Área do Cliente**
 
