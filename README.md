@@ -26,6 +26,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
               - Cadastrar Cliente
               - Estacionar Veículos
               - Remover Veículos
+
   
 **2. Área do Administrador**: Área fechada e com entrada liberada apenas para funcionários ou colaboradores que possuam uma senha específica disponibilizada pela empresa. É uma área privativa com informações confindenciais e utilizada como banco de dados para a segurança dos usuários e da empresa, além de auxiliar na elaboração de relatórios financeiros.
             
