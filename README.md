@@ -34,7 +34,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
                  Listar Clientes
                  Acessar Rendimento Financeiro
     
-##Metodologia de Código 
+## Metodologia de Código 
 
 ## Diagrama de Funcionamento 
 
