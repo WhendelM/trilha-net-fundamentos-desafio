@@ -35,6 +35,11 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
                Listar Clientes
                 Acessar Rendimento Financeiro
 
+## Diagrama de Funcionamento do Sistema
+<img src="Diagrama - Whendel Muniz dos Santos.png">
+
+
+
 ## Metodologia de Código 
 
 **1. Varíavies**:
@@ -343,8 +348,6 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         }
     }
     }
-## Diagrama de Funcionamento do Sistema
-<img src="Diagrama - Whendel Muniz dos Santos.png">
 
 ## Metodologia de Código do Funcionamento do Sistema
 
