@@ -36,7 +36,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
                 Acessar Rendimento Financeiro
 
 ## Diagrama de Funcionamento do Sistema
-<img src="Diagrama - Whendel Muniz dos Santos.png">
+<img src="Diagrama - Whendel Muniz dos Santos - Página 2.png">
 
 ## Exemplo de Apresentação do Projeto
 <img src="ApresentaçãoProjeto.gif">
