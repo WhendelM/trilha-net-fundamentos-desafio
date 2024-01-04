@@ -71,7 +71,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         private const int LimiteMaximo = 3; 
 
 **2. Funções**:
-- **2.1 Adicionar Veículo**: Método responsável por, a partir da resposta do usuário (cliente), direcioná-lo para a área escolhida( rotativo ou mensalista), adicionar o veículo a partir da placa entregue ao sistema e armazenar os dados do usuário para visualização do administrador.
+- **2.1 Adicionar Veículo**: Método responsável por, a partir da resposta do usuário (cliente), direcioná-lo para a área escolhida( rotativo ou mensalista), adicionar o veículo a partir da placa entregue ao sistema e armazenar os dados do usuário para visualização do administrador. Ná área Rotativa, ao estacionar o carro, não é feito o pagamento, apenas na retiraada; já na área Mensalista, o pagamento é feito na entrada. Nessa função, também é possível controlar a quantidade de veículos em cada área do estacionamento, ou seja, se o estacionamento estiver lotado, o usuário não cnnsegue estacionar o veículo. 
 
         //Função de Estacionar Veículos.
         public void AdicionarVeiculo(String letra)
@@ -150,6 +150,85 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }
         }
 
+- **2.2 Cadastrar Clientes**: Função responsável por cadastrar clientes **mrnsalistas** para que possam usufruir das funcionalidades da área no estacionamento. O usuário, após o cadastro, pode ser redirecionado para estacionar o veículo, caso queira.
+-       //Função de Cadastrar Clientes Mensalistas.
+        //Diferentemente do cliente rotativo, o cliente mensalista faz parte de um plano mais rebuscado, incluindo cadastro, já que passará mais tempo.
+        public void CadastrarMensalista(){
+            Console.WriteLine("Sistema de cadastramento para o plano mensalista de Estacionamento.");
+            Console.WriteLine("Insira seu nome e sobrenone: ");
+
+            //Cadastro do nome e do cpf do cliente mensalista.
+            string nome = Console.ReadLine();
+            CadastroNomeMes.Add(nome);
+            Console.WriteLine("Insira seu CPF: ");
+            string cpf = Console.ReadLine();
+            CadastroCpfMes.Add(cpf);
+
+            //Opção do cliente, agora cadastrado, estacionar o veículo no modo mensalista. 
+            Console.WriteLine("Agradecemos o cadastro no sistema Estacionamento Mensalista.");
+            Console.WriteLine("Caso queira já estacionar seu veículo no modo mensalista, é só clicar a tecla M.");
+            Console.WriteLine("Caso não, é só clicar qualquer outra tecla.");
+            string tecla = Console.ReadLine();
+            tecla = tecla.ToUpper();
+
+            //O cliente é direcionado para a opção de Adicionar Veículo do modo Mensalista.
+            if(tecla == "M"){
+                AdicionarVeiculo(tecla);
+            }
+        }
+
+- **2.2 Remover Veículos**: Função responsável por remover os veículos de cada área do estacionamento. Nessa função, o pagamento do cliente rotativo é efetuado.
+
+            //Função de Remover Veículos
+            public void RemoverVeiculo(string letra){ 
+            //Opção Rotativo.  
+            if(letra == "R") {
+                Console.WriteLine("Digite a placa do veículo para remover: ");
+                string placaRot = Console.ReadLine();
+                //Verificar se o veículo foi estacionado. 
+                if (veiculosRot.Any(x => x.ToUpper() == placaRot.ToUpper())){
+                    Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+
+                    //Retirada do Veículo e cálculo do valor total do pagamento do cliente (o pagamento é feito ANTES da SAÍDA do estacionamento)
+                    int horas = Convert.ToInt32(Console.ReadLine());
+                    decimal valorTotalRot = PrecoInicialRot + (PrecoAdicionalRot * horas);
+
+                    //O valor é armazenado no Rendimento total da parte rotativa e o veículo é removido do estacionamento.
+                    RendimentoRot.Add(valorTotalRot);
+                    veiculosRot.Remove(placaRot);
+                    Console.WriteLine($"O veículo {placaRot} foi removido e o preço total foi de: R$ {valorTotalRot}. Agradecemos a preferência!");
+                }
+                else{
+                    Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                }
+            }
+            //Opção Mensalista.
+            else{
+                Console.WriteLine("Digite seu nome e sobrenome para verificação: ");
+                string verificacao = Console.ReadLine();
+
+                //Verificar se o usuário já está cadastrado no sistema de estacionamento mensalista.
+                if (CadastroNomeMes.Any(x => x == verificacao)){
+                    Console.WriteLine("Digite a placa do veículo para remover: ");
+                    string placaMes = Console.ReadLine();
+
+                   //Verificar se o veículo foi estacionado e Remoção do veículo.
+                    if (veiculosMes.Any(x => x.ToUpper() == placaMes.ToUpper())){
+                        veiculosRot.Remove(placaMes);
+                        Console.WriteLine($"O veículo {placaMes} foi removido! Agradecemos a preferência!");
+                    }
+                    else{
+                        Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente!");
+                    }
+                } 
+                else{
+                    Console.WriteLine("Seu nome não está cadastrado no sistema de Estacionamento Mensalista.");
+                    Console.WriteLine("Por gentileza, faça o cadastro antes para aproveitar essa opção!");
+                }
+            }
+        }
+
+  
 ## Diagrama de Funcionamento 
 <img src="Mapa Conceitual II - Whendel Muniz dos Santos - Página 2.png">
 
