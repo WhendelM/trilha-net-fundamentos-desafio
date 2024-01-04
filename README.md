@@ -70,6 +70,86 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         private static List<decimal> RendimentoMes = new List<decimal>();
         private const int LimiteMaximo = 3; 
 
+**2. Funções**:
+- **2.1 Adicionar Veículo**: Método responsável por, a partir da resposta do usuário (cliente), direcioná-lo para a área escolhida( rotativo ou mensalista), adicionar o veículo a partir da placa entregue ao sistema e armazenar os dados do usuário para visualização do administrador.
+
+        //Função de Estacionar Veículos.
+        public void AdicionarVeiculo(String letra)
+        {
+            letra = letra.ToUpper();
+            //Opção Rotativo.
+            if(letra == "R"){
+                //Verificar se o estacionamento rotativo está lotado.
+                if(veiculosRot.Count == LimiteMaximo){
+                    Console.WriteLine("O estacionamento está lotado.");
+                    Console.WriteLine("Por gentileza, procure outro estabelecimento ou espere por uma vaga.");
+                }
+                else{
+                    //Função de Estacionar implementada.
+                    Console.WriteLine($"Seja bem vindo ao sistema de Estacionamento Rotativo!\n Atualmente, há {Estacionamento.LimiteMaximo - Estacionamento.veiculosRot.Count} vagas disponíveis. ");
+                    Console.WriteLine("A tarifa é de R$ 10,00 e o preço adicional por hora é de R$ 3,00.");
+                    Console.WriteLine("Digite o seu nome e sobrenome para continuar: ");
+
+                    //Armazenamento de Nome e CPF para visualização do Administrador do sistema.
+                    NomesRotAdm.Add(Console.ReadLine());
+                    Console.WriteLine("Agora, digite o seu CPF para continuar: ");
+                    CpfRotAdm.Add(Console.ReadLine());
+                    Console.WriteLine("Informe a placa do seu veículo: ");
+                    string placaRot = Console.ReadLine();
+
+                    //Armazenamento do veículo no estacionamento rotativo e no ambiente do Administrador do sistema.
+                    veiculosRot.Add(placaRot);
+                    veiculosRotAdm.Add(placaRot);
+                    placaRot = placaRot.ToUpper();
+                    Console.WriteLine("O seu carro foi estacionado! Agradecemos a preferência.");
+                }
+
+            }
+
+            //Opção Mensalista.
+            else{
+                //Verificar se o estacionamento mensalista está lotado.
+                if(veiculosMes.Count == LimiteMaximo){
+                        Console.WriteLine("O estacionamento está lotado. Por gentileza, procure outro estabelecimento ou espere por uma vaga. ");
+                }
+                else{
+                    //Função de Estacionar implementada.
+                    Console.WriteLine($"Seja bem vindo ao sistema de Estacionamento Mensalista!\n Atualmente, há {Estacionamento.LimiteMaximo - Estacionamento.veiculosMes.Count} vagas disponíveis. ");
+                    Console.WriteLine("A tarifa é de R$ 250,00 e o preço adicional por mês é de R$ 50,00.");
+                    Console.WriteLine("Digite seu nome e sobrenome para verificação: ");
+                    string verificacao = Console.ReadLine();
+
+                    //Verificar se o usuário já está cadastrado no sistema de estacionamento mensalista.
+                        if (CadastroNomeMes.Any(x => x == verificacao)){
+                            //Armazenamento de Nome e CPF para visualização do Administrador do sistema.
+                            NomesMesAdm.Add(verificacao);
+                            Console.WriteLine("Digite o seu CPF: ");
+                            CpfMesAdm.Add(Console.ReadLine());
+                            Console.WriteLine("Digite a placa do seu veículo: ");
+
+                            //Armazenamento do veículo no estacionamento mensalista e no ambiente do Administrador do sistema. 
+                            string placaMes = Console.ReadLine();
+                            placaMes = placaMes.ToUpper();
+                            veiculosMes.Add(placaMes);
+                            veiculosMesAdm.Add(placaMes);
+
+                            //Cálculo do valor total para o usuário pagar por uma vaga no estacionamento mensalista (o pagamento é feito  ANTES da ENTRADA do estacionamento).
+                            Console.WriteLine("Digite a quantidade de meses que o veículo permanecerá estacionado:");
+                            int Mes = Convert.ToInt32(Console.ReadLine());
+                            decimal valorTotalMes = PrecoInicialMes + (PrecoAdicionalMes* Mes);
+
+                            //O valor é armazenado no Rendimento total do estacionamento mensalista.
+                            RendimentoMes.Add(valorTotalMes);
+                            Console.WriteLine($"O seu carro foi estacionado e o preço total foi de: R$ {valorTotalMes}. Agradecemos a preferência!");
+                        }
+                        else{
+                            Console.WriteLine("Seu nome não está cadastrado no sistema de Estacionamento Mensalista.");
+                            Console.WriteLine("Por gentileza, faça o cadastro antes para aproveitar essa opção.");
+                        }
+                }
+            }
+        }
+
 ## Diagrama de Funcionamento 
 <img src="Mapa Conceitual II - Whendel Muniz dos Santos - Página 2.png">
 
