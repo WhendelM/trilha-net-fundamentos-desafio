@@ -38,6 +38,8 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 ## Diagrama de Funcionamento do Sistema
 <img src="Diagrama - Whendel Muniz dos Santos.png">
 
+## Exemplo de Apresentação do Projeto
+
 
 
 ## Metodologia de Código 
