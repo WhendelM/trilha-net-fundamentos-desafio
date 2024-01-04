@@ -38,7 +38,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 -  **Acesssr Rendimento Financeiro**    
 
 ## Diagrama de Funcionamento do Sistema
-<img src="Diagrama .png">
+<img src="DiagramaProjeto.png">
 
 ## Exemplo de Apresentação do Projeto
 <img src="ApresentaçãoProjeto.gif">
