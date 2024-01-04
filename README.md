@@ -177,7 +177,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }
         }
 
-- **2.2 Remover Veículos**: Função responsável por remover os veículos de cada área do estacionamento. Nessa função, o pagamento do cliente rotativo é efetuado.
+- **2.3 Remover Veículos**: Função responsável por remover os veículos de cada área do estacionamento. Nessa função, o pagamento do cliente rotativo é efetuado.
 
             //Função de Remover Veículos
             public void RemoverVeiculo(string letra){ 
@@ -228,7 +228,115 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }
         }
 
-  
+   **2.4 Listar Veículos**: Função utilizada apenas por administradores e responsável poe listar todos os veículos de ambas as áreas.
+
+             public void ListarVeiculos(){
+            //Listar todos os veículos rotativos que foram estacionados (incluindo os que já foram removidos).
+            if (veiculosRot.Any()){
+                Console.WriteLine("Os veículos rotativos estacionados são:");
+                for (int contador = 0; contador < veiculosRot.Count; contador++){
+                    Console.WriteLine($"Veículo {contador + 1}: {veiculosRot[contador]}\n");
+                }
+            }
+            else{
+                Console.WriteLine("Não há veículos rotativos estacionados.");
+            }
+
+            //Listar todos os veículos mensalistas que foram estacionados (incluindo os que já foram removidos).
+            if(veiculosMes.Any()){
+                Console.WriteLine("Os veículos mensalistas estacionados são:");
+                for (int contador = 0; contador < veiculosMes.Count; contador++){
+                    Console.WriteLine($"Veículo {contador + 1}: {veiculosMes[contador]}\n");
+                }
+            }
+            else{
+                Console.WriteLine("Não há veículos mensalistas estacionados.");
+            }    
+        }
+
+**2.5 Listar Clientes**: Função utilizada apenas por administradores e responsável poe listar todos os clientes e seus respectivos veículos estacionados. 
+ 
+        //Listar as informações dos clientes (apenas para Administradores).
+        public void ListarClientes(){
+            Console.WriteLine("Para listar o total de clientes rotativos, digite R \n Para listar o total de clientes mensalistas ativos, digite M1 \n Para listar todos os clientes mensalistas cadastrados, digite M2 ");
+            string opcoes = Console.ReadLine();
+            opcoes = opcoes.ToUpper();
+            //Opção Rotativo (Apenas dos que estacionaram).
+            if(opcoes == "R"){
+                if(NomesRotAdm.Any()){
+                    //Lista os nomes, os cpfs e os veículos vinculados aos clientes rotativos que estacionaram os carros e removeram no dia.
+                    Console.WriteLine("Os clientes rotativos são:");
+                    for (int contador = 0; contador < NomesRotAdm.Count; contador++){
+                                Console.WriteLine($"Nome: {NomesRotAdm[contador]}");
+                                Console.WriteLine($"CPF: {CpfRotAdm[contador]}");
+                                Console.WriteLine($"Placa do Veículo: {veiculosRotAdm[contador]}\n");
+                            }  
+                    }
+                    else{
+                        Console.WriteLine("Não há clientes rotativos no momento.");
+                    }
+                }
+
+            //Opção Mensalista (Apenas dos que estacionaram).
+            else if(opcoes == "M1"){
+                if(NomesMesAdm.Any()){
+                    //Lista os nomes, os cpfs e os veículos vinculados aos clientes mensalistas que estacionaram os carros e removeram no dia.
+                    Console.WriteLine("Os clientes mensalistas são:");
+                        for (int contador = 0; contador < NomesMesAdm.Count; contador++){
+                                    Console.WriteLine($"Nome {contador + 1}: {NomesMesAdm[contador]}");
+                                    Console.WriteLine($"CPF: {CpfMesAdm[contador]}");
+                                    Console.WriteLine($"Placa do Veículo: {veiculosMesAdm[contador]}");
+                        }
+                    }
+                else{
+                    Console.WriteLine("Não há clientes mensalistas no momento.");
+                }
+            }
+                
+
+            //Opção Mensalista (TODOS os cadastrados).
+            else{
+                if(CadastroNomeMes.Any()){
+                    Console.WriteLine("Os clientes mensalistas cadastrados são:");
+                    //Lista os nomes e os cpfs dos clientes mensalistas cadastrados 
+                        for (int contador = 0; contador < CadastroNomeMes.Count; contador++){
+                                Console.WriteLine($"Nome: {CadastroNomeMes[contador]}");
+                                Console.WriteLine($"CPF: {CadastroCpfMes[contador]}");
+                            }
+                        }
+                else{
+                    Console.WriteLine("Não há cadastro de clientes mensalistas no momento.");
+                }
+            }
+        }
+
+**2.6 Listar Clientes**: Função utilizada apenas por administradores e responsável poe disponibilizar o rendimento financeiro de cada área e, consequentemente, o renimento total do estacionamento. 
+        
+        //Função para mostrar o Rendimento Total do Estacionamento (Apenas para Administradores).
+        public void RendimentoTotal(){
+            //Rendimento Rotativo
+            if(RendimentoRot.Any()){
+                decimal SomaRot = RendimentoRot.Sum();
+                Console.WriteLine($"O rendimento da parte do estacionamento rotativo foi de: R$ {SomaRot}.");
+            }
+            else{
+                Console.WriteLine("Não houve rendimeto do estacionamento rotativo.");
+            }
+
+            //Rendimento Mensalista
+            if(RendimentoMes.Any()){
+                decimal SomaMes = RendimentoMes.Sum();
+                Console.WriteLine($"O rendimento da parte do estacionamento menaalista foi de: R$ {SomaMes}.");
+            }
+            else{
+                Console.WriteLine("Não houve rendimeto do estacionamento mensalista.");
+            }
+            
+            //Rendimento Total
+            Console.WriteLine($"O rendimento total foi de: R${RendimentoRot.Sum() + RendimentoMes.Sum()}.");
+        }
+    }
+}
 ## Diagrama de Funcionamento 
 <img src="Mapa Conceitual II - Whendel Muniz dos Santos - Página 2.png">
 
