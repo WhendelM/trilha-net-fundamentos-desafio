@@ -346,7 +346,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 ## Diagrama de Funcionamento do Sistema
 <img src="Diagrama - Whendel Muniz dos Santos.png">
 
-## Metodologia de Funcionamento do Sistema
+## Metodologia de Código do Funcionamento do Sistema
 
 
     using System.Text.RegularExpressions;
@@ -474,6 +474,19 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
     Console.WriteLine("Reiniciando...\n \n ");
     //Finalizar o Programa e Reiniciá-lo.
     }
+
+##Apresentação do Funcionamento do Sistema 
+
+##**Painel Inicial**
+
+#**Área do Cliente**
+
+- **Modo Rotativo**
+
+- **Modo Rotativo - Estacionar Veículo**
+
+- **Modo Rotativo - Remover Veículo**
+
 
 
 1. A classe **Estacionamento** abriga 4 variáveis:
