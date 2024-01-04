@@ -14,7 +14,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
    **1.1 Estacionamento Rotativo:** Modelo baseado em estacionar veículos durante até 1 dia e o valor é pago na saída (retirada do veículo após o tempo de estacionamento).
          Neste método, apesar de nao haver cadastro obrigatório, são solicitados o nome e o CPF do usuário que estacionar o veículo. 
          
-   = **1.1.1 Opções no Modo Rotativo:**
+   **1.1.1 Opções no Modo Rotativo:**
              - Estacionar Veículos
              - Remover Veículos
              
@@ -30,7 +30,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
   
 **2. Área do Administrador**: Área fechada e com entrada liberada apenas para funcionários ou colaboradores que possuam uma senha específica disponibilizada pela empresa. É uma área privativa com informações confindenciais e utilizada como banco de dados para a segurança dos usuários e da empresa, além de auxiliar na elaboração de relatórios financeiros.       
 
-= **2.1 Opções da Área do Administrador**
+**2.1 Opções da Área do Administrador**
                - Listar Veículos
                - Listar Clientes
                  Acessar Rendimento Financeiro
