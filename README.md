@@ -4,7 +4,7 @@ www.dio.me
 ## Desafio de projeto
 Criar um sistema de estacionamento privado a partir dos conhecimentos sobre **Programação Orientada a Obejtos (POO)** vistos no **Bootcamp Decola Tech 2024 - Avanade**. 
 
-##Feito por: Whendel Muniz dos Santos**
+**Feito por: Whendel Muniz dos Santos**
 
 ## Proposta Incrementada 
 O modelo de estacionammento foi incrementado com 2 modalidades:
