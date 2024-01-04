@@ -166,7 +166,8 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         }
 
 - **2.2 Cadastrar Clientes**: Função responsável por cadastrar clientes **mrnsalistas** para que possam usufruir das funcionalidades da área no estacionamento. O usuário, após o cadastro, pode ser redirecionado para estacionar o veículo, caso queira.
--       //Função de Cadastrar Clientes Mensalistas.
+
+        //Função de Cadastrar Clientes Mensalistas.
         //Diferentemente do cliente rotativo, o cliente mensalista faz parte de um plano mais rebuscado, incluindo cadastro, já que passará mais tempo.
         public void CadastrarMensalista(){
             Console.WriteLine("Sistema de cadastramento para o plano mensalista de Estacionamento.");
@@ -192,7 +193,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }
         }
 
-- **2.3 Remover Veículos**: Função responsável por remover os veículos de cada área do estacionamento. Nessa função, o pagamento do cliente rotativo é efetuado.
+-- **2.3 Remover Veículos**: Função responsável por remover os veículos de cada área do estacionamento. Nessa função, o pagamento do cliente rotativo é efetuado.
 
             //Função de Remover Veículos
             public void RemoverVeiculo(string letra){ 
@@ -243,7 +244,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }
         }
 
-   **2.4 Listar Veículos**: Função utilizada apenas por administradores e responsável poe listar todos os veículos de ambas as áreas.
+  - **2.4 Listar Veículos**: Função utilizada apenas por administradores e responsável poe listar todos os veículos de ambas as áreas.
 
              public void ListarVeiculos(){
             //Listar todos os veículos rotativos que foram estacionados (incluindo os que já foram removidos).
@@ -269,7 +270,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }    
         }
 
-**2.5 Listar Clientes**: Função utilizada apenas por administradores e responsável poe listar todos os clientes e seus respectivos veículos estacionados. 
+- **2.5 Listar Clientes**: Função utilizada apenas por administradores e responsável poe listar todos os clientes e seus respectivos veículos estacionados. 
  
         //Listar as informações dos clientes (apenas para Administradores).
         public void ListarClientes(){
@@ -325,7 +326,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             }
         }
 
-**2.6 Listar Clientes**: Função utilizada apenas por administradores e responsável poe disponibilizar o rendimento financeiro de cada área e, consequentemente, o renimento total do estacionamento. 
+- **2.6 Listar Clientes**: Função utilizada apenas por administradores e responsável poe disponibilizar o rendimento financeiro de cada área e, consequentemente, o renimento total do estacionamento. 
         
         //Função para mostrar o Rendimento Total do Estacionamento (Apenas para Administradores).
         public void RendimentoTotal(){
@@ -482,6 +483,3 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
     //Finalizar o Programa e Reiniciá-lo.
     }
 
-
-
-- **Modo Mensalista - Estacionar Veículo Inválido (Cadastro não identificado)**
