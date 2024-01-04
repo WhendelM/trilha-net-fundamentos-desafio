@@ -39,7 +39,13 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 
 **1. Varíavies**:
 - **1.1 Modo Rotativo**
-        
+
+
+       namespace DesafioFundamentos.Models
+      {
+
+      public class Estacionamento
+      {
         //Objetos para o modo ROTATIVO de estacionamento (rot). 
         //Em ordem: Preço Inicial Fixo, Preço por Hora e Lista com os Veículos (Placas).
         private const decimal PrecoInicialRot = 10;
@@ -336,7 +342,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
             Console.WriteLine($"O rendimento total foi de: R${RendimentoRot.Sum() + RendimentoMes.Sum()}.");
         }
     }
-}
+    }
 ## Diagrama de Funcionamento 
 <img src="Diagrama - Whendel Muniz dos Santos .png">
 
