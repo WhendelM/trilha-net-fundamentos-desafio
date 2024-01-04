@@ -9,7 +9,7 @@ Criar um sistema de estacionamento privado a partir dos conhecimentos sobre **Pr
 ## Proposta Incrementada 
 O modelo de estacionammento foi incrementado com 2 modalidades:
 
-**1. Área do Cliente:** Área aberta para todos os clientes que venham a se interessar no estacionamento. Neste projeto, há dpis modelos; 
+**1. Área do Cliente:** Área aberta para todos os clientes que venham a se interessar no estacionamento. Neste projeto, há dois modelos:
 
    **1.1 Estacionamento Rotativo:** Modelo baseado em estacionar veículos durante até 1 dia e o valor é pago na saída (retirada do veículo após o tempo de estacionamento).
          Neste método, apesar de nao haver cadastro obrigatório, são solicitados o nome e o CPF do usuário que estacionar o veículo.
@@ -34,10 +34,40 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
                - Listar Veículos
                  Listar Clientes
                  Acessar Rendimento Financeiro
-    
+
 ## Metodologia de Código 
 
 **1. Varíavies**: 
+
+
+    public class Estacionamento
+    {
+        //Objetos para o modo ROTATIVO de estacionamento (rot). 
+        //Em ordem: Preço Inicial Fixo, Preço por Hora e Lista com os Veículos (Placas).
+        private const decimal PrecoInicialRot = 10;
+        private const decimal PrecoAdicionalRot = 3;
+        public static List<string> veiculosRot = new List<string>();
+
+        //Objetos para o modo MENSALISTA de estacionamento (Mes).
+        //Em ordem: Preço Inicial Fixo, Preço por Hora, Lista com os Veículos (Placas), Lista para Cadastro com o Nome do Cliente e o CPF. 
+        private const decimal PrecoInicialMes = 250;
+        private const decimal PrecoAdicionalMes = 50;
+        public static List<string> veiculosMes = new List<string>();
+        public static List<string> CadastroNomeMes = new List<string>();
+        public static List<string> CadastroCpfMes = new List<string>();
+
+        //Objetos para o controle do Administrador.
+        //Em ordem: Listas com os veículos diários,com os nomes, os cpfs, o rendimento de cada parte do estacionamento (Rotativo e Mensalista) e o limite máximo dos veículos das duas partes. 
+        private static List<string> veiculosRotAdm = new List<string>();
+        private static List<string> NomesRotAdm = new List<string>();
+        private static List<string> CpfRotAdm = new List<string>();
+        private static List<decimal> RendimentoRot = new List<decimal>();
+        private static List<string> veiculosMesAdm = new List<string>();
+        private static List<string> NomesMesAdm = new List<string>();
+        private static List<string> CpfMesAdm = new List<string>();
+        private static List<decimal> RendimentoMes = new List<decimal>();
+        private const int LimiteMaximo = 3; 
+
 
 ## Diagrama de Funcionamento 
 
