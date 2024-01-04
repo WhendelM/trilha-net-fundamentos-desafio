@@ -22,10 +22,10 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         Neste método, para acessar o Modo Mnesalista, é necessário, obrigatoriamente, estar cadastrado previamente no sistema, sendo solicitados o nome e o CPF do usuário que 
         estacionar o veículo.  
         
- - **1.2.1 Opções no Modo Mensalista:**
-              - Cadastrar Cliente
-              - Estacionar Veículos
-              - Remover Veículos
+**1.2.1 Opções no Modo Mensalista:**
+              Cadastrar Cliente
+              Estacionar Veículos
+              Remover Veículos
 
   
 **2. Área do Administrador**: Área fechada e com entrada liberada apenas para funcionários ou colaboradores que possuam uma senha específica disponibilizada pela empresa. É uma área privativa com informações confindenciais e utilizada como banco de dados para a segurança dos usuários e da empresa, além de auxiliar na elaboração de relatórios financeiros.       
