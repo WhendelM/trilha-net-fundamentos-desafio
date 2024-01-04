@@ -47,7 +47,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
         public static List<string> veiculosRot = new List<string>();
 
 - **1.1 Modo Mensalista**
--
+
         
         //Objetos para o modo ROTATIVO de estacionamento (rot).
         //Em ordem: Preço Inicial Fixo, Preço por Hora e Lista com os Veículos (Placas).
