@@ -15,9 +15,9 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
          Neste método, apesar de nao haver cadastro obrigatório, são solicitados o nome e o CPF do usuário que estacionar o veículo. 
          
    **1.1.1 Opções no Modo Rotativo:**
-             Estacionar Veículos
-             Remover Veículos
-             
+           
+  - **Adicionar Veículo**
+  -            
   **1.2 Estacionamento Mensalista:** Modelo baseado em estacionar veículos durante, pelo menos, 1 mês com valor pago na entrada (é feito um cadastro e um plano de estacionamento previamente com pagamento imediato).
         Neste método, para acessar o Modo Mnesalista, é necessário, obrigatoriamente, estar cadastrado previamente no sistema, sendo solicitados o nome e o CPF do usuário que 
         estacionar o veículo.  
