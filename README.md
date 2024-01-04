@@ -480,33 +480,6 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
     //Finalizar o Programa e Reiniciá-lo.
     }
 
-## Apresentação do Funcionamento do Sistema 
 
-### **Painel Inicial**
-
-### **Área do Cliente**
-
-#### **Modo Rotativo**
-
-- **Modo Rotativo - Estacionar Veículo**
-  <img src="Estacionar-Rotativo.png">
-
-- **Modo Rotativo - Remover Veículo**
-
-- **Modo Rotativo - Remover Veículo Inválido (Placa não encontrada)**
-
-- **Modo Rotativo - Default**
-
-#### **Modo Mensalista**
-
-- **Modo Mensalista -  Cadastrar Clientes**
-
-- **Modo Mensalista - Estacionar Veículo**
-
-- **Modo Mensalista - Estacionar Veículo Inválido (Cadastro não identificado)**
-
-- **Modo Mensalista - Estacionar Veículo Inválido (Placa não encontrada)**
-
-- **Modo Mensalista - Remover Veículos**
 
 - **Modo Mensalista - Estacionar Veículo Inválido (Cadastro não identificado)**
