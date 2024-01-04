@@ -479,9 +479,9 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 
 ### **Painel Inicial**
 
-#**Área do Cliente**
+### **Área do Cliente**
 
-- **Modo Rotativo**
+#### **Modo Rotativo**
 
 - **Modo Rotativo - Estacionar Veículo**
 
