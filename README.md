@@ -63,6 +63,7 @@ https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/5a79
 É possível visualizar que, quando não há mais vagas no estacionamento, o cliente não consegue estacionar nenhum carro e recebe uma mensagem de aviso do sistema.
 
 -  **4. Modo Administrador**
+  
 https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/16d2559e-d950-48a6-af72-4c81df9b51e6
 
 É possível analisar 3 funções: Listar Veículos (apenas veículos estacionados atualmente), Listar Clientes (com todos os clientes que estacionaram o veículo em algum momento, mesmo os veículos já removidos) separados por modalidade, além do rendimento de cada modalidade junto com o total. O acesso à Área de Administradores só é aceito para colaboradores que possuem o padrão de senha programado no sistema (LETRA LETRA LETRA NÚMERO), ou seja, caso o padrão não seja esse, o acesso é negado. 
