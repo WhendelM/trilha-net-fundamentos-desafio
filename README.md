@@ -43,7 +43,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 
 ## Exemplos de Apresentação do Projeto
 - **1. Mensagem Inicial e Modo Rotativo**]
-- 
+
 https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/1958a569-9638-435d-a289-4a7f240e54d1
 
 
