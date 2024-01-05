@@ -41,8 +41,11 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 <img src="DiagramaProjeto.png">
 
 ## Exemplo de Apresentação do Projeto
-<img src="ApresentaçãoProjeto.gif">
 
+- **1.1 Modo Rotativo**
+<img src="Rotativo.gif">
+
+É possível visualizar que a função de estacionar veículos duas vezes com um aviso do número de vagas disponíveis naquele momento, além da função de remover veículos e um aviso de erro ao remover um veículo de placa desconhecida pelo sistema.
 
 ## Metodologia de Código 
 
