@@ -60,7 +60,7 @@ https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/dd72
 
 https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/5a79796b-fe85-4006-a8e6-a1e0177f5193
 
-É possível visualizar que, quando não há mais vagas no estacionamento, o cliente não consegue estacionar nenhum carro e recebe uma mensagem de aviso do sistema.
+É possível visualizar que, quando não há mais vagas no estacionamento, o cliente não consegue estacionar nenhum veículo e recebe uma mensagem de aviso do sistema.
 
 -  **4. Modo Administrador**
   
