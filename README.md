@@ -118,7 +118,7 @@ O sistema também foi programado para que o cliente, caso acione alguma tecla in
 **2. Funções**:
 - **2.1 Adicionar Veículo**: Método responsável por, a partir da resposta do usuário (cliente), direcioná-lo para a área escolhida( rotativo ou mensalista), adicionar o veículo a partir da placa entregue ao sistema e armazenar os dados do usuário para visualização do administrador. Ná área Rotativa, ao estacionar o carro, não é feito o pagamento, apenas na retiraada; já na área Mensalista, o pagamento é feito na entrada. Nessa função, também é possível controlar a quantidade de veículos em cada área do estacionamento, ou seja, se o estacionamento estiver lotado, o usuário não cnnsegue estacionar o veículo. 
 
-        //Função de Estacionar Veículos.
+       //Função de Estacionar Veículos.
         public void AdicionarVeiculo(String letra)
         {
             letra = letra.ToUpper();
@@ -141,11 +141,11 @@ O sistema também foi programado para que o cliente, caso acione alguma tecla in
                     CpfRotAdm.Add(Console.ReadLine());
                     Console.WriteLine("Informe a placa do seu veículo: ");
                     string placaRot = Console.ReadLine();
+                    placaRot = placaRot.ToUpper();
 
                     //Armazenamento do veículo no estacionamento rotativo e no ambiente do Administrador do sistema.
                     veiculosRot.Add(placaRot);
                     veiculosRotAdm.Add(placaRot);
-                    placaRot = placaRot.ToUpper();
                     Console.WriteLine("O seu carro foi estacionado! Agradecemos a preferência.");
                 }
 
@@ -181,7 +181,7 @@ O sistema também foi programado para que o cliente, caso acione alguma tecla in
                             //Cálculo do valor total para o usuário pagar por uma vaga no estacionamento mensalista (o pagamento é feito  ANTES da ENTRADA do estacionamento).
                             Console.WriteLine("Digite a quantidade de meses que o veículo permanecerá estacionado:");
                             int Mes = Convert.ToInt32(Console.ReadLine());
-                            decimal valorTotalMes = PrecoInicialMes + (PrecoAdicionalMes* Mes);
+                            decimal valorTotalMes = PrecoInicialMes + ((Mes-1)* PrecoAdicionalMes);
 
                             //O valor é armazenado no Rendimento total do estacionamento mensalista.
                             RendimentoMes.Add(valorTotalMes);
@@ -189,12 +189,12 @@ O sistema também foi programado para que o cliente, caso acione alguma tecla in
                         }
                         else{
                             Console.WriteLine("Seu nome não está cadastrado no sistema de Estacionamento Mensalista.");
-                            Console.WriteLine("Por gentileza, faça o cadastro antes para aproveitar essa opção.");
+                            Console.WriteLine("Por gentileza, faça o cadastro antes para aproveitar essa opção!");
                         }
                 }
             }
         }
-
+  
 - **2.2 Cadastrar Clientes**: Função responsável por cadastrar clientes **mrnsalistas** para que possam usufruir das funcionalidades da área no estacionamento. O usuário, após o cadastro, pode ser redirecionado para estacionar o veículo, caso queira.
 
         //Função de Cadastrar Clientes Mensalistas.
@@ -225,19 +225,20 @@ O sistema também foi programado para que o cliente, caso acione alguma tecla in
 
 - **2.3 Remover Veículos**: Função responsável por remover os veículos de cada área do estacionamento. Nessa função, o pagamento do cliente rotativo é efetuado.
 
-            //Função de Remover Veículos
-            public void RemoverVeiculo(string letra){ 
+           //Função de Remover Veículos.
+        public void RemoverVeiculo(string letra){ 
             //Opção Rotativo.  
             if(letra == "R") {
                 Console.WriteLine("Digite a placa do veículo para remover: ");
                 string placaRot = Console.ReadLine();
+
                 //Verificar se o veículo foi estacionado. 
                 if (veiculosRot.Any(x => x.ToUpper() == placaRot.ToUpper())){
                     Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
                     //Retirada do Veículo e cálculo do valor total do pagamento do cliente (o pagamento é feito ANTES da SAÍDA do estacionamento)
                     int horas = Convert.ToInt32(Console.ReadLine());
-                    decimal valorTotalRot = PrecoInicialRot + (PrecoAdicionalRot * horas);
+                    decimal valorTotalRot = PrecoInicialRot + ((horas-1)* PrecoAdicionalRot);
 
                     //O valor é armazenado no Rendimento total da parte rotativa e o veículo é removido do estacionamento.
                     RendimentoRot.Add(valorTotalRot);
@@ -273,7 +274,6 @@ O sistema também foi programado para que o cliente, caso acione alguma tecla in
                 }
             }
         }
-
 - **2.4 Listar Veículos**: Função utilizada apenas por administradores e responsável poe listar todos os veículos de ambas as áreas.
 
              public void ListarVeiculos(){
