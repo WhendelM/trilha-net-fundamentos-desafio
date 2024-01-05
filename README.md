@@ -6,7 +6,7 @@ Criar um sistema de estacionamento privado a partir dos conhecimentos sobre **Pr
 
 **Feito por: Whendel Muniz dos Santos**
 
-## Proposta Incrementada 
+## Proposta projetada pelo estudante
 O modelo de estacionammento foi incrementado com 2 modalidades:
 
 **1. Área do Cliente:** Área aberta para todos os clientes que venham a se interessar no estacionamento. Neste projeto, há dois modelos:
@@ -23,6 +23,7 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 **1.2 Estacionamento Mensalista:** Modelo baseado em estacionar veículos durante, pelo menos, 1 mês com valor pago na entrada (é feito um cadastro e um plano de estacionamento previamente com pagamento imediato).
         Neste método, para acessar o Modo Mnesalista, é necessário, obrigatoriamente, estar cadastrado previamente no sistema, sendo solicitados o nome e o CPF do usuário que 
         estacionar o veículo.  
+
         
 **1.2.1 Opções no Modo Mensalista:**
   -  **Cadastrar Clientes**
@@ -42,11 +43,34 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 
 ## Exemplos de Apresentação do Projeto
 - **1. Mensagem Inicial e Modo Rotativo**
+https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/1958a569-9638-435d-a289-4a7f240e54d1
 
-https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/41ff8fb5-b5d9-4197-b296-c0ff9282bf52
 
+É possível visualizar que a função de estacionar veículos duas vezes com um aviso do número de vagas disponíveis naquele momento, além da função de remover veículos e um aviso de erro ao remover um veículo de placa desconhecida pelo sistema. Também, é possível observar que o sistema consegue identificar as respostas das opções em letras minúsculas, pois está programado para convetê-las para minúsculas.
 
-É possível visualizar que a função de estacionar veículos duas vezes com um aviso do número de vagas disponíveis naquele momento, além da função de remover veículos e um aviso de erro ao remover um veículo de placa desconhecida pelo sistema.
+- **2.Modo Mensalista**
+  
+
+https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/dd72b5e5-0390-4ec7-8f62-b4df73be8b6a
+
+É possível visualizar a função de cadastrar clientes interligada com a função de estacionar veículos. Também, é possível visualizar que o pagamento é feito na "entrada" do estacionamento ao estacionar e que o estacionamento/remoção do veículo só é liberado se o nome do cliente estiver cadastrado no sistema.
+
+-  **3. Estacionamento Lotado** 
+
+https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/5a79796b-fe85-4006-a8e6-a1e0177f5193
+
+É possível visualizar que, quando não há mais vagas no estacionamento, o cliente não consegue estacionar nenhum carro e recebe uma mensagem de aviso do sistema.
+
+-  **4. Modo Administrador**
+https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/16d2559e-d950-48a6-af72-4c81df9b51e6
+
+É possível analisar 3 funções: Listar Veículos (apenas veículos estacionados atualmente), Listar Clientes (com todos os clientes que estacionaram o veículo em algum momento, mesmo os veículos já removidos) separados por modalidade, além do rendimento de cada modalidade junto com o total. O acesso à Área de Administradores só é aceito para colaboradores que possuem o padrão de senha programado no sistema (LETRA LETRA LETRA NÚMERO), ou seja, caso o padrão não seja esse, o acesso é negado. 
+
+- **5. Defaults Comuns**
+
+https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/55ee9bc8-c042-4cc5-9b38-b6d31b6ff92f
+
+O sistema também foi programado para que o cliente, caso acione alguma tecla inesperada, volte para a tela anterior ao erro. 
 
 ## Metodologia de Código 
 
