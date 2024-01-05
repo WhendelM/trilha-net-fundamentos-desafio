@@ -41,7 +41,8 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 <img src="DiagramaProjeto.png">
 
 ## Exemplo de Apresentação do Projeto
-- **1.1 Modo Rotativo**
+- **1.1 Modo Rotativo
+
 https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/41ff8fb5-b5d9-4197-b296-c0ff9282bf52
 
 
