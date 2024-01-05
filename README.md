@@ -36,7 +36,7 @@ O modelo de estacionammento foi projetado com 2 modalidades:
   
    -  **Listar Veículos**
   -  **Listar Clientes**
--  **Acesssr Rendimento Financeiro**    
+-  **Acessar Rendimento Financeiro**    
 
 ## Diagrama de Funcionamento do Sistema
 <img src="DiagramaProjeto.png">
