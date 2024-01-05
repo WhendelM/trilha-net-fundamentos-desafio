@@ -36,24 +36,27 @@ namespace DesafioFundamentos.Models
             if(letra == "R"){
                 //Verificar se o estacionamento rotativo está lotado.
                 if(veiculosRot.Count == LimiteMaximo){
-                    Console.WriteLine("O estacionamento está lotado. Por gentileza, procure outro estabelecimento ou espere por uma vaga. ");
+                    Console.WriteLine("O estacionamento está lotado.");
+                    Console.WriteLine("Por gentileza, procure outro estabelecimento ou espere por uma vaga.");
                 }
                 else{
                     //Função de Estacionar implementada.
-                    Console.WriteLine($"Seja bem vindo ao sistema de estacionamento!\n Atualmente, há {Estacionamento.LimiteMaximo - Estacionamento.veiculosRot.Count} vagas disponíveis. ");
+                    Console.WriteLine($"Seja bem vindo ao sistema de Estacionamento Rotativo!\n Atualmente, há {Estacionamento.LimiteMaximo - Estacionamento.veiculosRot.Count} vagas disponíveis. ");
                     Console.WriteLine("A tarifa é de R$ 10,00 e o preço adicional por hora é de R$ 3,00.");
                     Console.WriteLine("Digite o seu nome e sobrenome para continuar: ");
+
                     //Armazenamento de Nome e CPF para visualização do Administrador do sistema.
                     NomesRotAdm.Add(Console.ReadLine());
                     Console.WriteLine("Agora, digite o seu CPF para continuar: ");
                     CpfRotAdm.Add(Console.ReadLine());
                     Console.WriteLine("Informe a placa do seu veículo: ");
                     string placaRot = Console.ReadLine();
+                    placaRot = placaRot.ToUpper();
+
                     //Armazenamento do veículo no estacionamento rotativo e no ambiente do Administrador do sistema.
                     veiculosRot.Add(placaRot);
                     veiculosRotAdm.Add(placaRot);
-                    placaRot = placaRot.ToUpper();
-                    Console.WriteLine("O seu carro foi estacionado! Agradecemos a confiança");
+                    Console.WriteLine("O seu carro foi estacionado! Agradecemos a preferência.");
                 }
 
             }
@@ -66,10 +69,11 @@ namespace DesafioFundamentos.Models
                 }
                 else{
                     //Função de Estacionar implementada.
-                    Console.WriteLine($"Seja bem vindo ao sistema de estacionamento!\n Atualmente, há {Estacionamento.LimiteMaximo - Estacionamento.veiculosMes.Count} vagas disponíveis. ");
+                    Console.WriteLine($"Seja bem vindo ao sistema de Estacionamento Mensalista!\n Atualmente, há {Estacionamento.LimiteMaximo - Estacionamento.veiculosMes.Count} vagas disponíveis. ");
                     Console.WriteLine("A tarifa é de R$ 250,00 e o preço adicional por mês é de R$ 50,00.");
                     Console.WriteLine("Digite seu nome e sobrenome para verificação: ");
                     string verificacao = Console.ReadLine();
+
                     //Verificar se o usuário já está cadastrado no sistema de estacionamento mensalista.
                         if (CadastroNomeMes.Any(x => x == verificacao)){
                             //Armazenamento de Nome e CPF para visualização do Administrador do sistema.
@@ -77,21 +81,25 @@ namespace DesafioFundamentos.Models
                             Console.WriteLine("Digite o seu CPF: ");
                             CpfMesAdm.Add(Console.ReadLine());
                             Console.WriteLine("Digite a placa do seu veículo: ");
+
                             //Armazenamento do veículo no estacionamento mensalista e no ambiente do Administrador do sistema. 
                             string placaMes = Console.ReadLine();
                             placaMes = placaMes.ToUpper();
                             veiculosMes.Add(placaMes);
                             veiculosMesAdm.Add(placaMes);
+
                             //Cálculo do valor total para o usuário pagar por uma vaga no estacionamento mensalista (o pagamento é feito  ANTES da ENTRADA do estacionamento).
                             Console.WriteLine("Digite a quantidade de meses que o veículo permanecerá estacionado:");
                             int Mes = Convert.ToInt32(Console.ReadLine());
-                            decimal valorTotalMes = PrecoInicialMes + (PrecoAdicionalMes* Mes);
+                            decimal valorTotalMes = PrecoInicialMes + ((Mes-1)* PrecoAdicionalMes);
+
                             //O valor é armazenado no Rendimento total do estacionamento mensalista.
                             RendimentoMes.Add(valorTotalMes);
-                            Console.WriteLine($"O seu carro foi estacionado e o preço total foi de: R$ {valorTotalMes}. Agradecemos a preferência! Agradecemos a confiança");
+                            Console.WriteLine($"O seu carro foi estacionado e o preço total foi de: R$ {valorTotalMes}. Agradecemos a preferência!");
                         }
                         else{
-                        Console.WriteLine("Seu nome não está cadastrado no sistema de Estacionamento Mensalista. Por gentileza, faça o cadastro antes para aproveitar essa opção.");
+                            Console.WriteLine("Seu nome não está cadastrado no sistema de Estacionamento Mensalista.");
+                            Console.WriteLine("Por gentileza, faça o cadastro antes para aproveitar essa opção!");
                         }
                 }
             }
@@ -100,18 +108,24 @@ namespace DesafioFundamentos.Models
         //Função de Cadastrar Clientes Mensalistas.
         //Diferentemente do cliente rotativo, o cliente mensalista faz parte de um plano mais rebuscado, incluindo cadastro, já que passará mais tempo.
         public void CadastrarMensalista(){
-            Console.WriteLine("Sistema de cadastramento para o plano mensalista de Estacionamento");
+            Console.WriteLine("Sistema de cadastramento para o plano mensalista de Estacionamento.");
             Console.WriteLine("Insira seu nome e sobrenone: ");
+
             //Cadastro do nome e do cpf do cliente mensalista.
             string nome = Console.ReadLine();
             CadastroNomeMes.Add(nome);
             Console.WriteLine("Insira seu CPF: ");
             string cpf = Console.ReadLine();
             CadastroCpfMes.Add(cpf);
+
             //Opção do cliente, agora cadastrado, estacionar o veículo no modo mensalista. 
-            Console.WriteLine("Agradecemos o cadastro no sistema Estacionamento Mensalista. Caso queira já estacionar seu veículo no modo mensalista, é só clicar a tecla M. Caso não, é só clicar qualquer outra tecla.");
+            Console.WriteLine("Agradecemos o cadastro no sistema Estacionamento Mensalista.");
+            Console.WriteLine("Caso queira já estacionar seu veículo no modo mensalista, é só clicar a tecla M.");
+            Console.WriteLine("Caso não, é só clicar qualquer outra tecla.");
             string tecla = Console.ReadLine();
             tecla = tecla.ToUpper();
+
+            //O cliente é direcionado para a opção de Adicionar Veículo do modo Mensalista.
             if(tecla == "M"){
                 AdicionarVeiculo(tecla);
             }
@@ -123,12 +137,15 @@ namespace DesafioFundamentos.Models
             if(letra == "R") {
                 Console.WriteLine("Digite a placa do veículo para remover: ");
                 string placaRot = Console.ReadLine();
+
                 //Verificar se o veículo foi estacionado. 
                 if (veiculosRot.Any(x => x.ToUpper() == placaRot.ToUpper())){
                     Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+
                     //Retirada do Veículo e cálculo do valor total do pagamento do cliente (o pagamento é feito ANTES da SAÍDA do estacionamento)
                     int horas = Convert.ToInt32(Console.ReadLine());
-                    decimal valorTotalRot = PrecoInicialRot + (PrecoAdicionalRot * horas);
+                    decimal valorTotalRot = PrecoInicialRot + ((horas-1)* PrecoAdicionalRot);
+
                     //O valor é armazenado no Rendimento total da parte rotativa e o veículo é removido do estacionamento.
                     RendimentoRot.Add(valorTotalRot);
                     veiculosRot.Remove(placaRot);
@@ -142,21 +159,24 @@ namespace DesafioFundamentos.Models
             else{
                 Console.WriteLine("Digite seu nome e sobrenome para verificação: ");
                 string verificacao = Console.ReadLine();
+
                 //Verificar se o usuário já está cadastrado no sistema de estacionamento mensalista.
                 if (CadastroNomeMes.Any(x => x == verificacao)){
                     Console.WriteLine("Digite a placa do veículo para remover: ");
                     string placaMes = Console.ReadLine();
+
                    //Verificar se o veículo foi estacionado e Remoção do veículo.
                     if (veiculosMes.Any(x => x.ToUpper() == placaMes.ToUpper())){
                         veiculosRot.Remove(placaMes);
-                        Console.WriteLine($"O veículo {placaMes} foi removido");
+                        Console.WriteLine($"O veículo {placaMes} foi removido! Agradecemos a preferência!");
                     }
                     else{
-                        Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                        Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente!");
                     }
                 } 
                 else{
-                    Console.WriteLine("Seu nome não está cadastrado no sistema de Estacionamento Mensalista. Por gentileza, faça o cadastro antes para aproveitar essa opção.");
+                    Console.WriteLine("Seu nome não está cadastrado no sistema de Estacionamento Mensalista.");
+                    Console.WriteLine("Por gentileza, faça o cadastro antes para aproveitar essa opção!");
                 }
             }
         }
@@ -171,9 +191,10 @@ namespace DesafioFundamentos.Models
                 }
             }
             else{
-                //Listar todos os veículos mensalistas que foram estacionados (incluindo os que já foram removidos).
                 Console.WriteLine("Não há veículos rotativos estacionados.");
             }
+
+            //Listar todos os veículos mensalistas que foram estacionados (incluindo os que já foram removidos).
             if(veiculosMes.Any()){
                 Console.WriteLine("Os veículos mensalistas estacionados são:");
                 for (int contador = 0; contador < veiculosMes.Count; contador++){
@@ -185,7 +206,7 @@ namespace DesafioFundamentos.Models
             }    
         }
 
-        //Listar as informações dos clientes (apenas para os administradores).
+        //Listar as informações dos clientes (apenas para Administradores).
         public void ListarClientes(){
             Console.WriteLine("Para listar o total de clientes rotativos, digite R \n Para listar o total de clientes mensalistas ativos, digite M1 \n Para listar todos os clientes mensalistas cadastrados, digite M2 ");
             string opcoes = Console.ReadLine();
@@ -240,28 +261,28 @@ namespace DesafioFundamentos.Models
         }
     
 
-        //Função para mostrar o Rendimento Total do Estacionamento.
+        //Função para mostrar o Rendimento Total do Estacionamento (Apenas para Administradores).
         public void RendimentoTotal(){
             //Rendimento Rotativo
             if(RendimentoRot.Any()){
                 decimal SomaRot = RendimentoRot.Sum();
-                Console.WriteLine($"O rendimento da parte do estacionamento rotativo foi de: R$ {SomaRot}");
+                Console.WriteLine($"O rendimento da parte do estacionamento rotativo foi de: R$ {SomaRot}.");
             }
             else{
-                Console.WriteLine("Não houve rendimeto do estacionamento rotativo ");
+                Console.WriteLine("Não houve rendimeto do estacionamento rotativo.");
             }
 
             //Rendimento Mensalista
             if(RendimentoMes.Any()){
                 decimal SomaMes = RendimentoMes.Sum();
-                Console.WriteLine($"O rendimento da parte do estacionamento menaalista foi de: R$ {SomaMes}");
+                Console.WriteLine($"O rendimento da parte do estacionamento menaalista foi de: R$ {SomaMes}.");
             }
             else{
-                Console.WriteLine("Não houve rendimeto do estacionamento mensalista ");
+                Console.WriteLine("Não houve rendimeto do estacionamento mensalista.");
             }
             
             //Rendimento Total
-            Console.WriteLine($"O rendimento total foi de: R${RendimentoRot.Sum() + RendimentoMes.Sum()}");
+            Console.WriteLine($"O rendimento total foi de: R${RendimentoRot.Sum() + RendimentoMes.Sum()}.");
         }
     }
 }
