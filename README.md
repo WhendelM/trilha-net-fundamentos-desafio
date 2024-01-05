@@ -76,7 +76,7 @@ O sistema também foi programado para que o cliente, caso acione alguma tecla in
 
 ## Metodologia de Código 
 
-**1. Varíavies**:
+**1. Variáveis**:
 - **1.1 Modo Rotativo**
 
 
