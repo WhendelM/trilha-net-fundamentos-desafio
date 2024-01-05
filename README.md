@@ -41,9 +41,9 @@ O modelo de estacionammento foi incrementado com 2 modalidades:
 <img src="DiagramaProjeto.png">
 
 ## Exemplo de Apresentação do Projeto
-
 - **1.1 Modo Rotativo**
-<img src="VídeoRotativo.gif">
+https://github.com/WhendelM/trilha-net-fundamentos-desafio/assets/142748618/41ff8fb5-b5d9-4197-b296-c0ff9282bf52
+
 
 É possível visualizar que a função de estacionar veículos duas vezes com um aviso do número de vagas disponíveis naquele momento, além da função de remover veículos e um aviso de erro ao remover um veículo de placa desconhecida pelo sistema.
 
