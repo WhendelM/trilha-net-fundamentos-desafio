@@ -7,7 +7,7 @@ Criar um sistema de estacionamento privado a partir dos conhecimentos sobre **Pr
 **Feito por: Whendel Muniz dos Santos**
 
 ## Proposta projetada pelo estudante
-O modelo de estacionammento foi incrementado com 2 modalidades:
+O modelo de estacionammento foi projetado com 2 modalidades:
 
 **1. Área do Cliente:** Área aberta para todos os clientes que venham a se interessar no estacionamento. Neste projeto, há dois modelos:
 
