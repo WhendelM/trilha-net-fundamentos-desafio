@@ -39,7 +39,7 @@ O modelo de estacionammento foi projetado com 2 modalidades:
 -  **Acessar Rendimento Financeiro**    
 
 ## Diagrama de Funcionamento do Sistema
-<img src="Untitled Diagram.drawio.png">
+<img src="Flowcharts (1).png">
 
 ## Exemplos de Apresentação do Projeto
 - **1. Mensagem Inicial e Modo Rotativo**
