@@ -51,8 +51,8 @@ while(start){
         case "A":
             ReiniciarSenha:;//Referência de retorno caso o usuário digite a senha errada.
             //Opção de retorno para o início do sistema caso o usuário digite a opção errada por engano.
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine(" \nVocê está acessando Painel de Administradores do nosso sistema.\n");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine(" \nVocê estará acessando Painel de Administradores do nosso sistema.\n");
             Console.ResetColor();
             Console.WriteLine(
             "Para continuar, clique na tecla ENTER.\n"+
@@ -63,13 +63,15 @@ while(start){
             retornar = retornar.ToUpper();
             if(retornar == "E" ){
                Console.Clear();
-               Console.ResetColor();
+               Console.ForegroundColor = ConsoleColor.Yellow;
                Console.WriteLine(
                " \nEstamos retornando para o Painel Inicial...  \n");
                 goto ReiniciarAouC;
             }
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("Você está acessando o Painel do Administrador AV2024.");
             string padraoSenha = @"^[A-Z]{3}\d$"; //Padrão para senha única do administrador (LETRA LETRA LETRA NÚMERO).
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine(" \nPor questões de segurança, digite aqui sua senha exclusiva para entrada: \n");
             Console.ForegroundColor = ConsoleColor.White;
             string senha = Console.ReadLine();
@@ -79,22 +81,23 @@ while(start){
                 //Senha aceita
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine(
-                "\nVocê estará acessando o Menu da Admnistração. \n"+
+                "\nVocê está acessando o Painel da Admnistração. \n"+
                 "Não esqueça que as informações armazenadas são privativas para a segurança da empresa e dos clientes. \n");
                 Console.WriteLine(
                 " \nMenu:\n"+
                 "Opção 1 - Acessar veículos estacionados\n"+
-                "Opção 2 - Acessar clientes\n"+
-                "Opção 3 - Acessar Rendimento Financeiro\n"+
-                "Opção 4 - Retornar para o Painel Inicial \n"
+                "Opção 2 - Acessar veículos removidos\n"+
+                "Opção 3 - Acessar Cadastro de Clientes Mensalistas\n"+
+                "Opção 4 - Acessar o Rendimento do Estacionamento\n"+
+                "Opção 5 - Retornar para o Painel Inicial \n"
                 );
                 Console.ForegroundColor = ConsoleColor.White;
                 switch(Console.ReadLine()){
                     case "1":
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        es.ListarVeiculos(); //Função Listar Veicúlos instanciada.
-                        Console.ResetColor();
+                        es.ListarCadastroVeiculosEstacionados(); //Função Listar Veicúlos instanciada.
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine(
                         " \nCaso queira retornar para o Menu da Administração, digite A.\n"+
                         "Caso queira encerrar a sessão e retornar para o Painel Principal, é só clicar na tecla ENTER. \n"
@@ -113,8 +116,8 @@ while(start){
                     case "2":
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        es.ListarClientes(); //Função Listar Clientes instanciada.
-                        Console.ResetColor();
+                        es.ListarCadastroVeiculosRemovidos(); //Função Listar Clientes instanciada.
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine(
                         " \nCaso queira retornar para o Menu da Administração, digite A.\n"+
                         "Caso queira encerrar a sessão e retornar para o Painel Principal, é só clicar na tecla ENTER. \n"
@@ -133,8 +136,8 @@ while(start){
                     case "3":
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        es.RendimentoTotal();//Função Rendimento Total instanciada.
-                        Console.ResetColor();
+                        es.ListarClientesMensalistas();//Função Rendimento Total instanciada.
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine(
                         " \nCaso queira retornar para o Menu da Administração, digite A.\n"+
                         "Caso queira encerrar a sessão e retornar para o Painel Principal, é só clicar na tecla ENTER. \n"
@@ -149,8 +152,26 @@ while(start){
                             goto ReiniciarOpcoesDeA; //Retorno para o Menu de Administrador para facilitar a navegação.
                         }
                     break; 
-
                     case "4":
+                    Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        es.RendimentoTotal();//Função Rendimento Total instanciada.
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine(
+                        " \nCaso queira retornar para o Menu da Administração, digite A.\n"+
+                        "Caso queira encerrar a sessão e retornar para o Painel Principal, é só clicar na tecla ENTER. \n"
+                        );
+                        Console.ForegroundColor = ConsoleColor.White;
+                        retornar = Console.ReadLine();
+                        retornar = retornar.ToUpper();
+                        if(retornar == "A"){
+                            Console.Clear();
+                            Console.ResetColor();
+                            Console.WriteLine("Retornando para o Menu da Administração...");
+                            goto ReiniciarOpcoesDeA; //Retorno para o Menu de Administrador para facilitar a navegação.
+                        }
+                    break;
+                    case "5":
                         Console.ResetColor();
                         goto Encerrar; //Encerra o programa e Retorna para o Início.
 
@@ -179,8 +200,8 @@ while(start){
         //Área do Cliente Escolhida.
         case "C":
         //Opção de retorno para o início do sistema caso o usuário digite a opção errada por engano.
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(" \nVocê está acessando o Painel de Clientes AV2024.\n");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(" \nVocê estará acessando o Painel de Clientes AV2024.\n");
             Console.ResetColor();
             Console.WriteLine(
             "Para continuar, clique na tecla ENTER.\n"+
@@ -196,6 +217,8 @@ while(start){
                " \nEstamos retornando para o Painel Inicial...  \n");
                 goto ReiniciarAouC;
             }
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Você está acessando o Painel do Cliente AV2024");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" \nPara acessar o Estacionamento Rotativo, digite R.\n");
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -208,8 +231,8 @@ while(start){
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
-            " \nOpção inválida."+
-            "Estamos retornando para o Painel Principal.\n");
+            " \nOpção inválida. \n"+
+            "Estamos retornando para o Painel Principal...\n");
             goto ReiniciarAouC; //Opção Default Referenciada (Retorno para o Início do Programa caso não tenha teclado A ou C).
     }
 ReiniciarOpcoesCliente:; //Referência de retorno caso o usuário não digite nenhuma das opções do Menu do Estacionamento Rotativo(R) ou Mensalista(M).
@@ -235,7 +258,7 @@ switch(opcaoRouM){
             case "1":
                 Console.Clear();
                 es.AdicionarVeiculo(opcaoRouM);
-                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine(
                 " \nCaso queira retornar para o Menu da Área do Estacionamento Rotativo, digite R.\n"+
                 "Caso queira encerrar a sessão e retornar para o Painel Inicial, é só clicar na tecla ENTER. \n"
@@ -254,7 +277,7 @@ switch(opcaoRouM){
             case "2":
                 Console.Clear();
                 es.RemoverVeiculo(opcaoRouM);
-                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine(
                 " \nCaso queira retornar para o Menu da Área do Estacionamento Rotativo, digite R.\n"+
                 "Caso queira encerrar a sessão e retornar para o Painel Inicial, é só clicar na tecla ENTER. \n"
@@ -331,7 +354,7 @@ switch(opcaoRouM){
             //Função Adicionar Veículo instanciada.
                 Console.Clear();
                 es.AdicionarVeiculo(opcaoRouM);
-                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine(
                 " \nCaso queira retornar para o Menu da Área do Estacionamento Mensalista, digite M.\n"+
                 "Caso queira encerrar a sessão e retornar para o Painel Inicial, é só clicar na tecla ENTER. \n"
@@ -350,7 +373,7 @@ switch(opcaoRouM){
             //Função Remover Veículo instanciada.
                 Console.Clear();
                 es.RemoverVeiculo(opcaoRouM);
-                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine(
                 " \nCaso queira retornar para o Menu da Área do Estacionamento Mensalista, digite M.\n"+
                 "Caso queira encerrar a sessão e retornar para o Painel Inicial, é só clicar na tecla ENTER. \n"
@@ -386,7 +409,7 @@ switch(opcaoRouM){
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
-            " \nOpção inválida."+
+            " \nOpção inválida.\n"+
             "Estamos retornando para a Área do Cliente.\n");
             goto ReiniciarRouM;  //Opção Default Referenciada (Retorno para a área do cliente, caso o usuário não tenha teclado R ou M).
 }
